@@ -1,0 +1,43 @@
+<style>
+    .form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .form-full-width {
+        width: 100%;
+    }
+</style>
+<h1 mat-dialog-title>Customer Data</h1>
+<form class="form">
+    <div mat-dialog-content>
+        <mat-form-field class="form-full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput autocomplete="off" name="firstName" [(ngModel)] = "customer.firstName" value="{{customer.firstName}}" >
+        </mat-form-field>
+        <div><br /></div>
+        <mat-form-field class="form-full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput autocomplete="off" name="lastName" [(ngModel)] = "customer.lastName" value="{{customer.lastName}}">
+        </mat-form-field>
+        <div><br /></div>
+        <mat-form-field class="form-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput autocomplete="off" name="email" [(ngModel)] = "customer.email" value="{{customer.email}}">
+        </mat-form-field>
+        <div><br /></div>
+        <mat-form-field class="form-full-width">
+            <mat-label>Status</mat-label>
+            <select matNativeControl required name="status" [(ngModel)] = "customer.status" value="{{customer.status}}">
+                <option value="1">Active</option>
+                <option value="2">In-Active</option>        
+            </select>
+        </mat-form-field>
+        <div><br /></div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button mat-raised-button color="warn"  mat-dialog-close>Cancel</button>
+        <button mat-button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial (click)="saveCustomer()">Save</button>
+    </div>
+</form>
