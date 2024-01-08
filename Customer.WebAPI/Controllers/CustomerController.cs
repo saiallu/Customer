@@ -32,6 +32,13 @@ namespace Customer.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("GetEmptyCustomer")]
+        public CustomerBO GetEmptyCustomer()
+        {
+            return new CustomerBO();
+        }
+
+        [HttpGet]
         [Route("DeleteCustomer")]
         public int DeleteById(int id)
         {
@@ -39,10 +46,10 @@ namespace Customer.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("InsertCustomer")]
-        public int InsertCustomer(CustomerBO customerBO)
+        [Route("CreateCustomer")]
+        public int CreateCustomer(CustomerBO customerBO)
         {
-            return customerBA.InsertCustomer(customerBO);
+            return customerBA.CreateCustomer(customerBO);
         }
 
         [HttpPost]

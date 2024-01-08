@@ -117,7 +117,7 @@ namespace Customer.DataAccess
             }
         }
 
-        public int InsertCustomer(CustomerBO customer)
+        public int CreateCustomer(CustomerBO customer)
         {
             using (SqlConnection conn = new SqlConnection(this.connectionStrings.CustomerConnection))
             {

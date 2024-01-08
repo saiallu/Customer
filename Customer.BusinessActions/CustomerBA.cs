@@ -27,9 +27,9 @@ namespace Customer.BusinessActions
             return dao.GetCustomerList();
         }
 
-        public int InsertCustomer(CustomerBO customer)
+        public int CreateCustomer(CustomerBO customer)
         {
-            return dao.InsertCustomer(customer);
+            return dao.CreateCustomer(customer);
         }
 
         public int UpdateCustomer(CustomerBO customer)
